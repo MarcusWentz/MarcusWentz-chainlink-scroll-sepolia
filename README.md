@@ -95,3 +95,20 @@ open your firewall:
 sudo ufw allow 5432/tcp
 ```
 then try again.
+
+## Mac OS Command Start 
+
+The Linux flag:
+```
+--platform 
+```
+is not needed on Mac OS, so the command can be:
+```
+sudo docker run \
+--name chainlink \
+-v $HOME/chainlink-scroll-sepolia:/chainlink -it \
+-p 6688:6688 \
+--add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.2.0 node \
+-config /chainlink/config.toml \
+-secrets /chainlink/secrets.toml start
+```
