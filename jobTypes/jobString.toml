@@ -4,7 +4,7 @@ name = "Get > String"
 externalJobID = "4a99df35-ebe7-49aa-b986-45ef6f03bf8f"
 forwardingAllowed = false
 maxTaskDuration = "0s"
-contractAddress = "0xf98aF765eB284cf2992199Fc3c1E13b402f2905d"
+contractAddress = "0x3d38E57b5d23c3881AffB8BC0978d5E0bd96c1C6"
 minContractPaymentLinkJuels = "0"
 observationSource = """
     decode_log   [type="ethabidecodelog"
@@ -20,7 +20,7 @@ observationSource = """
                   abi="fulfillOracleRequest2(bytes32 requestId, uint256 payment, address callbackAddress, bytes4 callbackFunctionId, uint256 expiration, bytes calldata data)"
                   data="{\\"requestId\\": $(decode_log.requestId), \\"payment\\":   $(decode_log.payment), \\"callbackAddress\\": $(decode_log.callbackAddr), \\"callbackFunctionId\\": $(decode_log.callbackFunctionId), \\"expiration\\": $(decode_log.cancelExpiration), \\"data\\": $(encode_data)}"
                   ]
-    submit_tx    [type="ethtx" to="0xf98aF765eB284cf2992199Fc3c1E13b402f2905d" data="$(encode_tx)"]
+    submit_tx    [type="ethtx" to="0x3d38E57b5d23c3881AffB8BC0978d5E0bd96c1C6" data="$(encode_tx)"]
 
     decode_log -> decode_cbor -> fetch -> parse -> encode_data -> encode_tx -> submit_tx
 """
