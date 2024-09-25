@@ -36,7 +36,7 @@ sudo docker run \
 -p 5432:5432 -d postgres
 ```
 
-4. Test Chainlink Node v2.16.0 with TOML file2s
+4. Test Chainlink Node v2.2.0 with TOML file2s
 
 Start Chainlink Node after PostgreSQL server is running (modify config.toml if you wish to modify network parameters)
 ```shell
@@ -44,7 +44,7 @@ sudo docker run \
 --name chainlink \
 --platform linux/x86_64/v8 -v $HOME/chainlink-scroll-sepolia:/chainlink -it \
 -p 6688:6688 \
---add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.16.0 node \
+--add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.2.0 node \
 -config /chainlink/config.toml \
 -secrets /chainlink/secrets.toml start
 ```
@@ -108,7 +108,7 @@ sudo docker run \
 --name chainlink \
 -v $HOME/chainlink-scroll-sepolia:/chainlink -it \
 -p 6688:6688 \
---add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.16.0 node \
+--add-host=host.docker.internal:host-gateway smartcontract/chainlink:2.2.0 node \
 -config /chainlink/config.toml \
 -secrets /chainlink/secrets.toml start
 ```
